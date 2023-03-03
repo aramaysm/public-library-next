@@ -10,21 +10,26 @@ import {
   Paper,
   Button,
  } from "@mui/material";
-import CheckIcon from "@mui/icons-material/Check";
-import CloseIcon from "@mui/icons-material/Close";
+import {Check,Close, AccountBox } from "@mui/icons-material/";
+
 import { Chip_Success, Chip_Error } from "./Chip_Styled";
-import {ButtonWarningStyled, ButtonErrorStyled} from "./Button_Styled"
+import { Delete, Edit } from "@mui/icons-material";
+
 
 interface TableProps {
   columns: Array<any>;
   data: Array<any>;
   onElementSelected: (element: any) => void;
+  onEditClick: () => void;
+  onDeleteClick: () => void;
 }
 
 export const Table_Customized = ({
   columns,
   data,
   onElementSelected,
+  onEditClick,
+  onDeleteClick,
 }: TableProps) => {
   const [selectedRow, setSelectedRow] = useState<any>({});
 
@@ -58,6 +63,9 @@ export const Table_Customized = ({
           </TableHead>
           <TableBody>
             {data.map((row) => {
+
+              const imageAlt = "https://i.postimg.cc/wMCS8Sj0/happy-smiling-young-man-3d-260nw-2128644164.png";
+
               return (
                 <TableRow
                   hover
@@ -72,34 +80,48 @@ export const Table_Customized = ({
                     let value = "";
                     let colorBooleans = "";
 
-                    return column.id === "status" ? (
+                    return column.id === "status" ? 
                       <TableCell key={row[column.id]} align={column.align}>
                         {row[column.id] === "Available" ? (
                           <Chip_Success
-                          icon={<CheckIcon />}
+                          icon={<Check />}
                             color="success"
                             label="Disponible"
                           />
                         ) : (
                           <Chip_Error
-                          icon={<CloseIcon />}
+                          icon={<Close />}
                             color="error"
                             label="No disponible"
                           />
                         )}
                       </TableCell>
-                    ) : (
+                     :
+                    column.id === "photo" 
+                    ?
+                    <TableCell key={row[column.id]} align={column.align}>
+                     
+                      <img className="rd-10 shadow"
+                       src={row[column.id] !== "" ? row[column.id] : imageAlt
+                       } height={80} width={75} />                    
+                      
+                    </TableCell>
+                    :
+
+                    
                       <TableCell key={row[column.id]} align={column.align}>
                         {row[column.id]}
                       </TableCell>
-                    );
+                    
                   })}
 
                   <TableCell align="center">
-                    <ButtonWarningStyled color="warning" variant="contained"> Editar</ButtonWarningStyled>
+                    <Button color="primary" variant="outlined"
+                     startIcon={<Edit />} onClick={()=>onEditClick()} > Editar</Button>
                   </TableCell>
                   <TableCell align="center">
-                    <ButtonErrorStyled color="error" variant="contained"> Eliminar</ButtonErrorStyled>
+                    <Button color="error" variant="outlined"
+                     startIcon={<Delete />} onClick={()=>onDeleteClick()}> Eliminar</Button>
                   </TableCell>
                 </TableRow>
               );

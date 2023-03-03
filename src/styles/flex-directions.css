@@ -13,30 +13,40 @@
   display: flex !important;
   align-content: space-between !important;
 }
+.j-c-s {
+  justify-content: flex-start !important;
+  display: flex !important;
+  align-content: flex-start !important;
+}
 .j-c-e {
-  justify-content: end !important;
+  justify-content: flex-end !important;
   display: flex !important;
   align-content: flex-end !important;
 }
+.a-i-c{
+  align-items: center !important;
+}
 
-.row {  
+.text-start{
+  text-align: start !important;
+}
+
+.row {
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   display: flex;
-  flex-wrap: wrap; 
-  margin-top: calc(-1 * var(--bs-gutter-y));
-  margin-right: calc(-0.5 * var(--bs-gutter-x));
-  margin-left: calc(-0.5 * var(--bs-gutter-x));
+  flex-wrap: wrap !important;
+  
 }
 .row > * {
-  flex: 0;
+  flex-shrink: 0;
   width: 100%;
   max-width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
- 
 }
+
 
 /*  General screens */
 
@@ -84,57 +94,56 @@
   flex: 0 0 auto;
   width: 100%;
 }
+/* Small screens  */
 
-
-/*  Long screens   */
-
-@media (min-width: 992px) {
-  .col-l-auto {
-    flex: 0 0 auto;
-    width: auto;
-  }
-  .col-l-1 {
-    flex: 0 0 auto;
-    width: 10%;
-  }
-  .col-l-2 {
-    flex: 0 0 auto;
-    width: 20%;
-  }
-  .col-l-3 {
-    flex: 0 0 auto;
-    width: 30%;
-  }
-  .col-l-4 {
-    flex: 0 0 auto;
-    width: 40%;
-  }
-  .col-l-5 {
-    flex: 0 0 auto;
-    width: 50%;
-  }
-  .col-l-6 {
-    flex: 0 0 auto;
-    width: 60%;
-  }
-  .col-l-7 {
-    flex: 0 0 auto;
-    width: 70%;
-  }
-  .col-l-8 {
-    flex: 0 0 auto;
-    width: 80%;
-  }
-  .col-l-9 {
-    flex: 0 0 auto;
-    width: 90%;
-  }
-  .col-l-10 {
-    flex: 0 0 auto;
-    width: 100%;
-  }
-  
+@media (min-width: 576px) {
+  .col-s-auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
+    .col-s-1 {
+      flex: 0 0 auto;
+      width: 10%;
+    }
+    .col-s-2 {
+      flex: 0 0 auto;
+      width: 20%;
+    }
+    .col-s-3 {
+      flex: 0 0 auto;
+      width: 30%;
+    }
+    .col-s-4 {
+      flex: 0 0 auto;
+      width: 40%;
+    }
+    .col-s-5 {
+      flex: 0 0 auto;
+      width: 50%;
+    }
+    .col-s-6 {
+      flex: 0 0 auto;
+      width: 60%;
+    }
+    .col-s-7 {
+      flex: 0 0 auto;
+      width: 70%;
+    }
+    .col-s-8 {
+      flex: 0 0 auto;
+      width: 80%;
+    }
+    .col-s-9 {
+      flex: 0 0 auto;
+      width: 90%;
+    }
+    .col-s-10 {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+    
 }
+
 
 /* Medium screens  */
 
@@ -186,54 +195,54 @@
       
 }
 
+/*  Long screens   */
 
-/* Small screens  */
-
-@media (min-width: 576px) {
-    .col-s-auto {
-        flex: 0 0 auto;
-        width: auto;
-      }
-      .col-s-1 {
-        flex: 0 0 auto;
-        width: 10%;
-      }
-      .col-s-2 {
-        flex: 0 0 auto;
-        width: 20%;
-      }
-      .col-s-3 {
-        flex: 0 0 auto;
-        width: 30%;
-      }
-      .col-s-4 {
-        flex: 0 0 auto;
-        width: 40%;
-      }
-      .col-s-5 {
-        flex: 0 0 auto;
-        width: 50%;
-      }
-      .col-s-6 {
-        flex: 0 0 auto;
-        width: 60%;
-      }
-      .col-s-7 {
-        flex: 0 0 auto;
-        width: 70%;
-      }
-      .col-s-8 {
-        flex: 0 0 auto;
-        width: 80%;
-      }
-      .col-s-9 {
-        flex: 0 0 auto;
-        width: 90%;
-      }
-      .col-s-10 {
-        flex: 0 0 auto;
-        width: 100%;
-      }
-      
+@media (min-width: 992px) {
+  .col-l-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .col-l-1 {
+    flex: 0 0 auto;
+    width: 10%;
+  }
+  .col-l-2 {
+    flex: 0 0 auto;
+    width: 20%;
+  }
+  .col-l-3 {
+    flex: 0 0 auto;
+    width: 30%;
+  }
+  .col-l-4 {
+    flex: 0 0 auto;
+    width: 40%;
+  }
+  .col-l-5 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+  .col-l-6 {
+    flex: 0 0 auto;
+    width: 60%;
+  }
+  .col-l-7 {
+    flex: 0 0 auto;
+    width: 70%;
+  }
+  .col-l-8 {
+    flex: 0 0 auto;
+    width: 80%;
+  }
+  .col-l-9 {
+    flex: 0 0 auto;
+    width: 90%;
+  }
+  .col-l-10 {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
 }
+
 

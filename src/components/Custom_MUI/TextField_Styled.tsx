@@ -1,7 +1,7 @@
-import { FormControl } from "@mui/material";
+import { TextField } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
-export const FormControl_Customized = styled(FormControl)({
+export const TextField_Customized = styled(TextField)({
     "& label.Mui-focused": {
       color: "#2ecc71",
     },

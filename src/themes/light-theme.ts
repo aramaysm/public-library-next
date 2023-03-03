@@ -7,16 +7,35 @@ export const lightTheme = createTheme(
         palette: {
             mode: 'light',
             background:{
-                default: grey [200]
+                default: "white"
             },
             primary:{
-                main: '#03b4cf',
-                contrastText:"white"
+                main: '#2ecc71',
+                contrastText:"white",
+                
             },
             secondary:{
                 main: '#19857b'
             }
         },
+        components: {
+            MuiLink: {
+              defaultProps: {
+                underline: 'none',
+              },
+            },
+            MuiAppBar: {
+              defaultProps: {
+               position: 'fixed',
+              },
+              styleOverrides: {
+                root: {
+                  backgroundColor: 'white',
+                  height: 60
+                },
+              }
+            }
+        }
         
     }
 );
